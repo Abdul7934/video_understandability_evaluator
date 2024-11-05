@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        .summary-box {
+            border: 1px solid #ccc;
+            padding: 15px;
+            background-color: #fff;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .back-link {
+            margin-top: 20px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Best Video</h1>
+    {% if video %}
+        <h2><a href="{{ video['url'] }}">{{ video['title'] }}</a></h2>
+        <div class="summary-box">
+            <p><strong>Summary:</strong></p>
+            <p>{{ summary }}</p>
+        </div>
+    {% else %}
+        <p>No valid videos found.</p>
+    {% endif %}
+    <a class="back-link" href="/">Go Back</a>
+</body>
+</html>

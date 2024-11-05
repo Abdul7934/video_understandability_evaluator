@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Understandability Evaluator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Video Understandability Evaluator</h1>
+    <form action="/submit" method="POST">
+        <textarea name="video_links" rows="10" cols="50" placeholder="Enter video links here, one per line..."></textarea>
+        <br>
+        <button type="submit">Evaluate Videos</button>
+    </form>
+</body>
+</html>
